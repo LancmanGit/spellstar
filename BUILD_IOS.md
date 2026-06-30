@@ -57,24 +57,34 @@ iPhone back into this Mac, open the project, press ▶ Run again. That's the who
 chore. (A $99/yr Apple Developer account removes the expiry — switch any time by
 enrolling and re-selecting the team in step 2.)
 
-## ⚠️ Offline caveat (read this)
+## Fully offline ✅
 
-`SpellStar.html` loads **React, ReactDOM, and Babel from the unpkg CDN**:
+The app is now **completely offline** — no CDN, no wifi needed to start.
+React, ReactDOM, Babel and the Nunito font are all vendored locally in the
+`vendor/` folder, which is bundled into the app:
 
-```html
-<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+```
+vendor/
+├── react.production.min.js        (18.3.1)
+├── react-dom.production.min.js    (18.3.1)
+├── babel.min.js                   (@babel/standalone 7.29.7)
+├── nunito.css                     (rewritten to local font paths)
+└── fonts/                         (5 Nunito woff2 subsets)
 ```
 
-So **the app needs wifi to start**, even though the HTML itself is bundled. For
-a child's device that's usually fine on home wifi, but it is *not* truly offline
-yet. To make it fully offline (recommended for a locked-down kid device):
+`SpellStar.html`'s `<head>` points at these local files — verified with zero
+remote references at runtime. This also makes the live GitHub Pages PWA load
+faster and work offline.
 
-- Download those three scripts into a `vendor/` folder next to `SpellStar.html`.
-- Change the three `<script src>` tags to point at the local files.
-- Add the `vendor/` folder to the Xcode target's *Copy Bundle Resources*.
+### Refreshing the vendored libraries (rarely needed)
 
-This also speeds up the live GitHub Pages PWA. Ask Claude to do the vendoring —
-it's a mechanical change but touches Olivia's living HTML, so it's kept separate
-from this first build.
+To bump a version later, re-download into `vendor/` and keep the same filenames:
+
+```bash
+cd spellstar
+curl -sL https://unpkg.com/react@18/umd/react.production.min.js     -o vendor/react.production.min.js
+curl -sL https://unpkg.com/react-dom@18/umd/react-dom.production.min.js -o vendor/react-dom.production.min.js
+curl -sL https://unpkg.com/@babel/standalone@7/babel.min.js          -o vendor/babel.min.js
+```
+
+The `<script src>` tags already point at `vendor/`, so no HTML edit is needed.

@@ -11,6 +11,7 @@
 		AA00000000000000000016 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000010 /* ContentView.swift */; };
 		AA00000000000000000017 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000011 /* Assets.xcassets */; };
 		AA00000000000000000018 /* SpellStar.html in Resources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000012 /* SpellStar.html */; };
+		AA0000000000000000001A /* vendor in Resources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000019 /* vendor */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +19,8 @@
 		AA00000000000000000010 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA00000000000000000011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA00000000000000000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA00000000000000000012 /* SpellStar.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = SpellStar.html; path = ../SpellStar.html; sourceTree = "<group>"; };
+		AA00000000000000000012 /* SpellStar.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = SpellStar.html; sourceTree = "<group>"; };
+		AA00000000000000000019 /* vendor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vendor; sourceTree = "<group>"; };
 		AA00000000000000000014 /* SpellStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpellStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -38,6 +40,7 @@
 			children = (
 				AA0000000000000000000E /* SpellStarApp */,
 				AA00000000000000000012 /* SpellStar.html */,
+				AA00000000000000000019 /* vendor */,
 				AA0000000000000000000D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,6 +124,7 @@
 			files = (
 				AA00000000000000000017 /* Assets.xcassets in Resources */,
 				AA00000000000000000018 /* SpellStar.html in Resources */,
+				AA0000000000000000001A /* vendor in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
