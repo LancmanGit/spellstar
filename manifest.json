@@ -1,0 +1,24 @@
+{
+  "name": "SpellStar",
+  "short_name": "SpellStar",
+  "description": "Australian curriculum spelling practice",
+  "start_url": "/spellstar/SpellStar.html",
+  "display": "standalone",
+  "background_color": "#0F0A1E",
+  "theme_color": "#0F0A1E",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

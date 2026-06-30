@@ -6,6 +6,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#0F0A1E">
+<meta name="apple-mobile-web-app-title" content="SpellStar">
+<link rel="manifest" href="manifest.json">
 <title>SpellStar ⭐</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -2125,6 +2127,11 @@ function App() {
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
+}
 </script>
 </body>
 </html>
